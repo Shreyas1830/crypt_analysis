@@ -216,52 +216,8 @@ since they depend on external paid tools or heavy system installs:
 
 ---
 
-## 8. Resume Bullet Points
 
-- Designed and built an end-to-end cryptocurrency analytics pipeline in Python, automating extraction, storage, cleaning, and feature engineering for 100 assets refreshed every 30 minutes.
-- Implemented a fault-tolerant ETL layer with exponential-backoff retries, a secondary API fallback, and schema validation, achieving zero-downtime data collection across provider outages.
-- Engineered 30+ time-series and cross-sectional features (returns, rolling volatility, momentum, market dominance) to support forecasting and anomaly detection.
-- Built a multi-model anomaly detection system (Z-score, IQR, Isolation Forest, Local Outlier Factor) to flag flash crashes, volume spikes, and market-cap anomalies in near real time.
-- Developed ARIMA/SARIMA and regression-based forecasting models for price and market-cap prediction, with backtested RMSE/MAE/MAPE/R² evaluation.
-- Designed a 13-query analytical SQL library (CTEs, window functions, views, indexes) answering ranking, volatility, and consistency-of-growth business questions.
-- Shipped an interactive Streamlit + Plotly dashboard with KPI cards, drill-downs, comparison mode, and automated HTML/PDF/Excel/CSV report generation.
-
-## 9. Interview Questions Based on This Project
-
-1. Walk me through what happens between an API call failing and the pipeline still producing a usable dashboard that day.
-2. Why did you choose Isolation Forest *and* Z-score/IQR for outlier detection instead of just one method?
-3. How do you decide whether ARIMA or SARIMA is the right model for a given coin's price series?
-4. Your rolling features are computed per-coin, ordered by time. What could go wrong if the underlying data has gaps (e.g., a missed 30-minute fetch), and how would you detect/handle that?
-5. How would you re-architect the storage layer if you needed second-by-second data instead of 30-minute snapshots?
-6. What's the risk of using global thresholds (e.g., a flat volatility Z-score cutoff) across coins of very different market caps, and how would you fix it?
-7. How would you validate that your "consistently outperforms Bitcoin" SQL query isn't just capturing survivorship bias?
-
-## 10. STAR-format Explanation (Interview Answer Template)
-
-**Situation:** Existing tutorials on crypto data pipelines stopped at basic
-API pulls and a couple of charts — not representative of what a data
-analyst actually ships.
-
-**Task:** Build a production-style analytics platform covering the full
-lifecycle: reliable ingestion, rigorous cleaning, feature engineering,
-statistical/ML analysis, and stakeholder-ready reporting.
-
-**Action:** I designed a modular pipeline (extraction → storage → cleaning
-→ feature engineering → anomaly detection/forecasting → reporting) with
-retry logic, schema validation, an audited cleaning pipeline (missing
-values, duplicates, outliers via three different methods), 30+ engineered
-features, ARIMA/regression forecasting with backtested metrics, and a
-Streamlit dashboard with KPI cards and drill-down analytics — plus a
-13-query SQL library and automated multi-format reporting.
-
-**Result:** A fully automated, self-healing analytics platform that
-refreshes every 30 minutes, flags market anomalies without manual
-review, and produces daily reports — demonstrating end-to-end ownership
-from raw API to executive-ready insight.
-
----
-
-## 11. Tech Stack
+## 8. Tech Stack
 
 Python · Pandas · NumPy · Matplotlib · Seaborn · Plotly · Scikit-learn ·
 SciPy · Statsmodels · Requests · APScheduler · SQLAlchemy · SQLite
