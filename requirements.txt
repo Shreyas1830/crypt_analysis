@@ -1,0 +1,35 @@
+# --- Core ---
+pandas>=2.2.0
+numpy>=1.26.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+SQLAlchemy>=2.0.0
+
+# --- Scheduling ---
+APScheduler>=3.10.0
+
+# --- Stats / ML ---
+scikit-learn>=1.4.0
+scipy>=1.12.0
+statsmodels>=0.14.0
+# prophet>=1.1.5          # optional, heavy dependency (cmdstanpy) - uncomment if needed
+
+# --- Visualization ---
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.19.0
+
+# --- Dashboard ---
+streamlit>=1.32.0
+
+# --- Reporting ---
+openpyxl>=3.1.0
+xlsxwriter>=3.2.0
+jinja2>=3.1.0
+weasyprint>=61.0        # HTML -> PDF report rendering
+# wkhtmltopdf as fallback if weasyprint system deps are unavailable
+
+# --- Dev / Quality ---
+pytest>=8.0.0
+black>=24.0.0
+python-json-logger>=2.0.7
